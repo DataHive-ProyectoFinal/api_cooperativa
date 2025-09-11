@@ -1,7 +1,10 @@
 # api_cooperativa
-DUMP de la tabla id_jornada
-Eliminar la tabla anterior
+¡¡¡IMPORTANTE!!!
+- Linkear en los php el archivo 'configuración.php' dependiendo de la ruta de ustedes.
+-Eliminar la tabla anterior de id_jornada, les dejo el DUMP abajo.
+-
 
+DUMP de la tabla id_jornada
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
