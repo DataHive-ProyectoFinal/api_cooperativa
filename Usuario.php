@@ -14,23 +14,33 @@ class Usuario {
     }
 
     public function actualizar($ci, $datos) {
-        $sql = "UPDATE solicitudes_ingreso 
-                SET nombre_completo=?, gmail=?, genero=?, telefono_celular=?, telefono_fijo=?, direccion=?, cantidad_familia=?, discapacidad_cargo=?, ocupacion=?, ingreso_mensual=? 
-                WHERE ci=?";
-        $stmt = $this->conexion->prepare($sql);
-        $stmt->bind_param("ssssssissss",
-            $datos['nombre_completo'],
-            $datos['gmail'],
-            $datos['genero'],
-            $datos['telefono_celular'],
-            $datos['telefono_fijo'],
-            $datos['direccion'],
-            $datos['cantidad_familia'],
-            $datos['discapacidad_cargo'],
-            $datos['ocupacion'],
-            $datos['ingreso_mensual'],
-            $ci
-        );
-        return $stmt->execute();
+    $sql = "UPDATE solicitudes_ingreso 
+            SET nombre_completo=?, gmail=?, genero=?, telefono_celular=?, telefono_fijo=?, direccion=?, cantidad_familia=?, discapacidad_cargo=?, ocupacion=?, ingreso=? 
+            WHERE ci=?";
+    $stmt = $this->conexion->prepare($sql);
+
+    if (!$stmt) {
+        die("Error en prepare: " . $this->conexion->error);
     }
+
+    $stmt->bind_param("sssssssssss",   // <- probar todos como strings para descartar
+        $datos['nombre_completo'],
+        $datos['gmail'],
+        $datos['genero'],
+        $datos['telefono_celular'],
+        $datos['telefono_fijo'],
+        $datos['direccion'],
+        $datos['cantidad_familia'],
+        $datos['discapacidad_cargo'],
+        $datos['ocupacion'],
+        $datos['ingreso'],
+        $ci
+    );
+
+    if (!$stmt->execute()) {
+        die("Error en execute: " . $stmt->error);
+    }
+
+    return true;
+}
 }
