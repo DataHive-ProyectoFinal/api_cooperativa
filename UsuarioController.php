@@ -34,7 +34,7 @@ class UsuarioController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['ci'])) {
             $ci = $_SESSION['ci'];
             $this->usuarioModel->actualizar($ci, $_POST);
-            header("Location: VerPerfil.php");
+            header("Location: /PruebaProyecto2/api_usuarios/VerPerfil.php");
             exit();
         }
     }
