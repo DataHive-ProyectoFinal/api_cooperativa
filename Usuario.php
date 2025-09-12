@@ -23,7 +23,7 @@ class Usuario {
         die("Error en prepare: " . $this->conexion->error);
     }
 
-    $stmt->bind_param("sssssssssss",   // <- probar todos como strings para descartar
+    $stmt->bind_param("ssssssssssi",   // <- probar todos como strings para descartar
         $datos['nombre_completo'],
         $datos['gmail'],
         $datos['genero'],
