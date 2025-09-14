@@ -1,10 +1,12 @@
 # api_cooperativa
-¡¡¡IMPORTANTE!!!
+
+*¡¡¡IMPORTANTE!!!*
+*CAMBIE EL NOMBRE DE LA BASE DE DATOS A bd_segunda_entrega, cambiarlo si es necesario*
 - Linkear en los php el archivo 'configuración.php' dependiendo de la ruta de ustedes.
 -Eliminar la tabla anterior de id_jornada, les dejo el DUMP abajo.
--
 
-DUMP de la tabla id_jornada
+
+*DUMP de la tabla id_jornada*
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -19,9 +21,9 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET@OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101SET@OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET@OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
@@ -91,3 +93,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
