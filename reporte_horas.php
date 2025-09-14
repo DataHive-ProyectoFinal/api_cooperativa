@@ -1,6 +1,7 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
-require_once 'configuracion.php';
+//CAMBIAR CONEXION CON BD
+require_once '../../../union/api_usuarios/configuracion.php';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$base_de_datos;charset=utf8mb4", $usuario, $contrasena, [

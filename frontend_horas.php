@@ -1,8 +1,10 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 header("Content-Type: application/json; charset=utf-8");
-require_once 'configuracion.php';
+//CAMBIA RUTA DE CONFIGURACION
+require_once '../../../union/api_usuarios/configuracion.php';
+
 
 $messages = [];
 
@@ -12,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $year = isset($_POST['year']) ? intval($_POST['year']) : intval(date('Y'));
     $horas = isset($_POST['horas']) ? trim($_POST['horas']) : '';
     $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : null;
+    $ci_usuario = isset($_POST['ci_usuario']) ? trim  ($_POST['ci_usuario']) : null;
     $weekday_user = $_POST['weekday'] ?? null;
 
     // Validaciones...
@@ -54,13 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($stmtCheck->fetch()) {
                 $messages[] = ['type'=>'error','text'=>'Ya existe un registro para esa fecha.'];
             } else {
-                $stmt = $pdo->prepare('INSERT INTO id_jornada (horas_semanales, mes, dia, descripcion, fecha) VALUES (:horas, :mes, :dia, :descripcion, :fecha)');
+                $stmt = $pdo->prepare('INSERT INTO id_jornada (horas_semanales, mes, dia, descripcion, fecha, ci_usuario) VALUES (:horas, :mes, :dia, :descripcion, :fecha, :ci_usuario)');
                 $stmt->execute([
                     ':horas' => floatval($horas),
                     ':mes' => $mes,
                     ':dia' => $dia,
                     ':descripcion' => $descripcion,
                     ':fecha' => $fecha_str,
+                    ':ci_usuario' => $ci_usuario
                 ]);
                 $messages[] = ['type'=>'success','text'=>'Registro guardado correctamente.'];
             }

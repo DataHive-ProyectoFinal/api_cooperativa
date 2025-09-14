@@ -1,6 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 header("Content-Type: application/json; charset=utf-8");
-require_once 'configuracion.php';
+//CAMBIAR CONEXION CON BD
+require_once '../../../union/api_usuarios/configuracion.php';
 
 $messages = [];
 $jornadas = [];
@@ -20,8 +23,7 @@ if (isset($_GET['verificar_id'])) {
 }
 
 // Buscar jornadas por ci_usuario
-// //Cambiar segun el nombre de las columnas ( ci ó ci_usuario)
-if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['ci_usuario'])) { 
+if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['ci_usuario'])) {
     $ci = trim($_POST['ci_usuario']);
     $stmt = $pdo->prepare("SELECT * FROM id_jornada WHERE ci_usuario=:ci_usuario ORDER BY fecha ASC");
     $stmt->execute([':ci_usuario'=>$ci]);
