@@ -1,0 +1,7 @@
+*Flujo de Registro de Pagos*
+
+1) Al ingresar al sistema del socio se debe de ir al apartado del Aside que diga registro de horas. 
+2) En la pantalla nos aparecerá  un Formulario donde se deba de ingresar mes y año de la jornada, en el calendario mas abajo se debe de colocar el día. Luego se registrará la cédula del usuario, a continuación las horas con un límite de 24 y por último una descripción de la jornada (opcional)
+3)Al presionar el botón de Registrar, en caso de ser correcta mostrará un mensaje verde arriba,en caso de errores de procesamiento mostrará en rojo.
+4)Luego de nuestro registro, en el mismo aside habrá un botón llamado jornada registrada
+  4.1)En esta sección aparecen dos tablas; Año Actual y Año anterior. En estas se mostrarán las jornadas ingresadas por semana. En verde apareceran las que cumplan las 21 horas, y en rojas las que no.
