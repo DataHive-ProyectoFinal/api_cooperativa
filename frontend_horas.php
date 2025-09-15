@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 0);
 header("Content-Type: application/json; charset=utf-8");
 //CAMBIA RUTA DE CONFIGURACION
-require_once '../../../union/api_usuarios/configuracion.php';
+require_once '../../union/api_usuarios/configuracion.php';
 
 
 $messages = [];

@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 header("Content-Type: application/json; charset=utf-8");
 //CAMBIAR CONEXION CON BD
-require_once '../../../union/api_usuarios/configuracion.php';
+require_once '../../union/api_usuarios/configuracion.php';
 
 $messages = [];
 $jornadas = [];
