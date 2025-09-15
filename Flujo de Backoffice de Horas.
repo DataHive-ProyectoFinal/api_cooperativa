@@ -1,0 +1,7 @@
+*Flujo de Backoffice de Horas*
+
+1)El backoffice de horas permite la búsqueda por filtro de las jornadas ingresadas del usuarios.
+2)En el aside del sistema de Backoffice se encontrará un apartado de Jornadas. Ahi habrá un formulario que pedira la cédula del usuario. Al filtrar en una tabla aparecerán las jornadas que no esten verificadas. En la última columna de la tabla aparecera un botón de Verificar.
+3)Al verificar la jornada desaparece de la tabla.
+
+
